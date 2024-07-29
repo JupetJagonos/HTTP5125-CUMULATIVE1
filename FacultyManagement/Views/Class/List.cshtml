@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SchoolManagementSystem.Models.Class>
+
+<h2>Classes</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var classData in Model)
+        {
+            <tr>
+                <td>@classData.ClassName</td>
+                <td>
+                    <a asp-action="Show" asp-route-id="@classData.ClassId" class="btn btn-info">Show</a>
+                    <a asp-action="Edit" asp-route-id="@classData.ClassId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@classData.ClassId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
